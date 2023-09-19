@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 public class MoleGame extends JFrame {
     private JButton[] buttons;
-    private Timer timer;
     private int score;
     public MoleGame(){
         setTitle("MOLE_GAME_JAVA");
