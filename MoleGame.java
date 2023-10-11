@@ -24,6 +24,7 @@ public class MoleGame extends JFrame {
     private class MoleListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+
         }
     }
 }
