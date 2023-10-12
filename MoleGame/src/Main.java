@@ -1,6 +1,6 @@
 public class Main {
     private static void run(){
-        MoleGame game = new MoleGame();
+        moleGame game = new moleGame();
     }
     public static void main(String[] args) {
         run();
