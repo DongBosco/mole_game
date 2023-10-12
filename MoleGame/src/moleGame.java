@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.ImageObserver;
 import java.io.IOException;
+import java.util.Random;
 
 import static javax.swing.SwingUtilities.paintComponent;
 
@@ -101,6 +103,52 @@ public class moleGame extends JFrame implements KeyListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
+        }
+    }
+    class Mole implements Runnable {
+        private int x;
+        private int y;
+        private boolean visible;
+        private int MOLE_PERIOD;
+
+        public Mole() {
+            visible = false;
+            this.MOLE_PERIOD = user.getPerriodMole();
+        }
+        public void show() {
+            Random rand = new Random();
+            x = rand.nextInt(WIDTH - setting.getMoleWidth());
+            y = rand.nextInt(HEIGHT - setting.getMoleHeight());
+            visible = true;
+        }
+
+        public boolean isVisible() {
+            return visible;
+        }
+
+        public void hide() {
+            visible = false;
+        }
+
+        public void draw(Graphics g) {
+            if (visible) {
+                g.drawImage(imgMGMT.getMoleIMG(), 0, 0, setting.getWidth(), setting.getHeight(), (ImageObserver) this);
+            }
+        }
+
+        public void setMOLE_PERIOD(int MOLE_PERIOD) {
+            this.MOLE_PERIOD = MOLE_PERIOD;
+        }
+
+        @Override
+        public void run() {
+            show();
+            try {
+                Thread.sleep(MOLE_PERIOD);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            hide();
         }
     }
 }
