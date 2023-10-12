@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 public class IMGmgmt extends JFrame {
     private Image backgroundIMG ;
@@ -8,13 +7,16 @@ public class IMGmgmt extends JFrame {
     private Image moleHitIMG;
     private Image hammerIMG;
     private Image hitHammerIMG;
+    private Image introBackgrounIMG;
 
-    public IMGmgmt() throws IOException {
-        this.backgroundIMG = new ImageIcon("gameBackGround.jpg").getImage();
-        this.moleIMG = new ImageIcon("Mole.png").getImage();
-        this.moleHitIMG = new ImageIcon("HitMole.png").getImage();
-        this.hammerIMG = new ImageIcon("hammer.png").getImage();
-        this.hitHammerIMG = new ImageIcon("hitHammer.png").getImage();
+    public IMGmgmt() {
+        this.backgroundIMG = new ImageIcon(getClass().getResource("/image/gameBackGround.jpg")).getImage();
+        this.moleIMG = new ImageIcon(getClass().getResource("/image/Mole.png")).getImage();
+        this.moleHitIMG = new ImageIcon(getClass().getResource("/image/HitMole.png")).getImage();
+        this.hammerIMG = new ImageIcon(getClass().getResource("/image/hammer.png")).getImage();
+        this.hitHammerIMG = new ImageIcon(getClass().getResource("/image/hitHammer.png")).getImage();
+        this.introBackgrounIMG = new ImageIcon(getClass().getResource("/image/mole_intro.jpg")).getImage();
+
     }
 
     public Image getBackgroundIMG() {
@@ -35,5 +37,13 @@ public class IMGmgmt extends JFrame {
 
     public Image getHitHammerIMG() {
         return hitHammerIMG;
+    }
+
+    public Image getIntroBackgrounIMG() {
+        return introBackgrounIMG;
+    }
+
+    public void setIntroBackgrounIMG(Image introBackgrounIMG) {
+        this.introBackgrounIMG = introBackgrounIMG;
     }
 }
