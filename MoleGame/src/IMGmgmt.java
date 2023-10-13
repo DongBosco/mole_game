@@ -43,7 +43,4 @@ public class IMGmgmt extends JFrame {
         return introBackgrounIMG;
     }
 
-    public void setIntroBackgrounIMG(Image introBackgrounIMG) {
-        this.introBackgrounIMG = introBackgrounIMG;
-    }
 }

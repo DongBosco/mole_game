@@ -9,7 +9,9 @@ public class gameScore {
         this.score = 0;
         this.userType=player;
     }
-
+    public void incrementScore(){
+        this.score++;
+    }
     public int getScore() {
         return score;
     }
